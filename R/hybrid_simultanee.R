@@ -33,7 +33,7 @@
 #' param <- res$param[[Kopt]]
 #' bisig_plot(x = x, rupt = param$rupt, mu=param$phi$mu )
 hybrid_simultanee <- function(x,P,Kmax,lmin=2){
-  cat("Remi's Function")
+  cat("Remi's Function \n")
   Linc  = matrix(-Inf,nrow=Kmax,ncol=1)
   n     = dim(x)[2]
   param = list()
@@ -123,14 +123,14 @@ hybrid_simultanee <- function(x,P,Kmax,lmin=2){
     
     for (k in Kconc){
       
-      out.neighbors  = neighbors(L=Linc,k=k,param=param,P=P,lmin=lmin)
+      out.neighbors  = neighbors(x=x,L=Linc,k=k,param=param,P=P,lmin=lmin)
       param          = out.neighbors$param
       Linc           = out.neighbors$L
       #plot(1:length(Linc),Linc,col=1)     lines(1:length(Ltmp),Ltmp,col=2)     lines(k,Linc[k],col=3)
       
     } # end k
     
-    out.neighbors  = neighbors(L=Linc,k=Kmax,param=param,P=P,lmin=lmin)
+    out.neighbors  = neighbors(x=x,L=Linc,k=Kmax,param=param,P=P,lmin=lmin)
     param          = out.neighbors$param
     Linc          = out.neighbors$L
     

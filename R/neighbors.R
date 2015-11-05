@@ -6,7 +6,7 @@
 #' @param ibp to deal with forbidden path, not currently implemented 
 #' @param lmin minimal size of the segment to be implemented
 #' @return smoothin likelihood
-neighbors <- function (L,k,param,ibp=c(),P,lmin=2) {
+neighbors <- function (x,L,k,param,ibp=c(),P,lmin=2) {
   
   
   V = length(ibp)
