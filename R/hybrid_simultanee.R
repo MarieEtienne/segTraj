@@ -32,9 +32,8 @@
 #' Kopt=5
 #' param <- res$param[[Kopt]]
 #' bisig_plot(x = x, rupt = param$rupt, mu=param$phi$mu )
-
 hybrid_simultanee <- function(x,P,Kmax,lmin=2){
-  
+  cat("Remi's Function")
   Linc  = matrix(-Inf,nrow=Kmax,ncol=1)
   n     = dim(x)[2]
   param = list()
